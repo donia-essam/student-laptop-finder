@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="saver">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student Laptop Finder - browse, save and compare laptops.">
+  <title>Browse Laptops | Student Finder</title>
+  <link href="./dist/output.css" rel="stylesheet">
+  <script type="module" src="./src/js/laptops.js"></script>
+</head>
+<body>
+<header class="theme-card border-b shadow-sm">
+  <nav class="page-container flex flex-wrap items-center justify-between gap-4 py-4">
+    <a href="./index.html" class="text-xl font-extrabold">Student<span class="text-orange-500">Finder</span></a>
+    <button id="menuToggle" class="btn-secondary md:hidden" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <div id="mainMenu" class="hidden w-full flex-col gap-4 md:flex md:w-auto md:flex-row md:items-center">
+      <a href="./index.html">Home</a><a href="./laptops.html">Laptops</a><a href="./favorites.html">Favorites</a><a href="./compare.html">Compare</a>
+      <button id="themeToggle" class="btn-action">Battery Saver</button>
+    </div>
+  </nav>
+</header>
+
+<main class="page-container">
+  <h1 class="section-title">Explore our laptops</h1>
+  <section class="theme-card mb-8 grid gap-4 rounded-2xl border p-5 sm:grid-cols-2 lg:grid-cols-3">
+    <input id="searchInput" type="search" placeholder="Search laptop or brand..." class="w-full rounded-xl">
+    <select id="categoryFilter" class="w-full rounded-xl"><option value="">All categories</option><option value="ultrabook">Ultrabook</option><option value="gaming">Gaming</option><option value="2-in-1">2-in-1</option><option value="creator">Creator</option><option value="budget">Budget</option></select>
+    <input id="maxPrice" type="number" min="0" placeholder="Maximum price (EGP)" class="w-full rounded-xl">
+    <input id="minRam" type="number" min="0" placeholder="Minimum RAM (GB)" class="w-full rounded-xl">
+    <input id="minBattery" type="number" min="0" placeholder="Minimum battery (hours)" class="w-full rounded-xl">
+    <select id="sortSelect" class="w-full rounded-xl"><option value="default">Default sorting</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="battery-asc">Battery: low to high</option><option value="battery-desc">Battery: high to low</option><option value="weight-asc">Weight: light to heavy</option><option value="weight-desc">Weight: heavy to light</option></select>
+    <button id="resetFilters" class="btn-action sm:col-span-2 lg:col-span-3">Reset filters</button>
+  </section>
+  <div class="mb-6 flex items-center justify-between"><h2 class="text-xl font-bold">Laptop results</h2><p id="resultCount" class="font-semibold text-orange-500">Loading...</p></div>
+  <div id="laptopGrid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"><div class="skeleton h-72"></div><div class="skeleton h-72"></div><div class="skeleton h-72"></div></div>
+</main>
+<footer class="theme-card mt-16 border-t"><div class="page-container text-center text-sm"><p class="font-semibold">Student Laptop Finder</p></div></footer>
+</body></html>
