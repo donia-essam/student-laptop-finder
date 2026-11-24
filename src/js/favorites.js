@@ -8,12 +8,6 @@ async function init() {
   try {
     const laptops = await getLaptops();
     function update() {
-      /*
-       * All favourite-page information is derived from the same saved-ID list.
-       * Filtering the catalogue first ensures that totals and visible cards agree,
-       * while recalculating after a change also removes deleted or stale entries
-       * from the interface automatically.
-       */
       const saved = laptops.filter(l => getFavorites().includes(l.id));
       const total = saved.reduce((sum,l) => sum + l.price, 0);
       document.querySelector("#totalFavorites").textContent = saved.length;
@@ -22,11 +16,6 @@ async function init() {
       renderCards(saved, grid);
     }
     document.querySelector("#clearFavorites").addEventListener("click", () => {
-      /*
-       * A confirmation dialog prevents a bulk delete from happening through an
-       * accidental click. Clearing storage also broadcasts favouritesChanged,
-       * which drives update() and removes the current cards from the page.
-       */
       if (confirm("Clear all saved favorites?")) clearFavorites();
     });
     window.addEventListener("favoritesChanged", update);
