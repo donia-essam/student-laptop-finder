@@ -11,7 +11,7 @@
     "batteryHours": 18,
     "weightKg": 1.24,
     "screenInches": 13.6,
-    "image": "https://placehold.co/800x520/e2e8f0/334155?text=MacBook+Air+M3",
+    "image": "./assets/images/asus-vivobook.jpg",
     "description": "A lightweight laptop with excellent performance and battery life."
   },
   {
@@ -26,7 +26,7 @@
     "batteryHours": 10,
     "weightKg": 1.86,
     "screenInches": 15.6,
-    "image": "https://placehold.co/800x520/e2e8f0/334155?text=Dell+XPS+15",
+    "image": "./assets/images/dell-inspiron.jpg",
     "description": "A premium laptop designed for productivity and creative work."
   },
   {
@@ -41,7 +41,7 @@
     "batteryHours": 6,
     "weightKg": 2.5,
     "screenInches": 16,
-    "image": "https://placehold.co/800x520/e2e8f0/334155?text=ASUS+ROG+Strix+G16",
+    "image": "./assets/images/lenovo-legion5.jpg",
     "description": "A powerful gaming laptop for demanding games and applications."
   },
   {
@@ -56,7 +56,7 @@
     "batteryHours": 8,
     "weightKg": 1.75,
     "screenInches": 15.6,
-    "image": "https://placehold.co/800x520/e2e8f0/334155?text=HP+Pavilion+15",
+    "image": "./assets/images/hp-pavilion.jpg",
     "description": "An affordable laptop for everyday student tasks."
   },
   {
@@ -71,7 +71,7 @@
     "batteryHours": 12,
     "weightKg": 1.49,
     "screenInches": 14,
-    "image": "https://placehold.co/800x520/e2e8f0/334155?text=Lenovo+Yoga+7",
+    "image": "./assets/images/lenovo-ideapad.jpg",
     "description": "A versatile convertible laptop for studying and creativity."
   },
   {
@@ -86,7 +86,7 @@
     "batteryHours": 7,
     "weightKg": 1.8,
     "screenInches": 15.6,
-    "image": "https://placehold.co/800x520/e2e8f0/334155?text=Acer+Aspire+5",
+    "image": "./assets/images/asus-vivobook.jpg",
     "description": "A practical everyday laptop for university students."
   },
   {
@@ -101,7 +101,7 @@
     "batteryHours": 17,
     "weightKg": 1.61,
     "screenInches": 14.2,
-    "image": "https://placehold.co/800x520/e2e8f0/334155?text=MacBook+Pro+14",
+    "image": "./assets/images/dell-inspiron.jpg",
     "description": "A professional laptop for development and demanding creative workloads."
   },
   {
@@ -116,7 +116,7 @@
     "batteryHours": 5,
     "weightKg": 2.25,
     "screenInches": 15.6,
-    "image": "https://placehold.co/800x520/e2e8f0/334155?text=MSI+Katana+15",
+    "image": "./assets/images/lenovo-legion5.jpg",
     "description": "A gaming-focused laptop with strong graphics performance."
   },
   {
@@ -131,7 +131,7 @@
     "batteryHours": 11,
     "weightKg": 1.55,
     "screenInches": 14,
-    "image": "https://placehold.co/800x520/e2e8f0/334155?text=Dell+Inspiron+14",
+    "image": "./assets/images/dell-inspiron.jpg",
     "description": "A balanced laptop for everyday university and office work."
   },
   {
@@ -146,7 +146,7 @@
     "batteryHours": 14,
     "weightKg": 1.2,
     "screenInches": 14,
-    "image": "https://placehold.co/800x520/e2e8f0/334155?text=ASUS+Zenbook+14",
+    "image": "./assets/images/asus-vivobook.jpg",
     "description": "A thin and lightweight laptop with a premium display."
   },
   {
@@ -161,7 +161,7 @@
     "batteryHours": 10,
     "weightKg": 1.5,
     "screenInches": 14,
-    "image": "https://placehold.co/800x520/e2e8f0/334155?text=HP+Envy+x360",
+    "image": "./assets/images/lenovo-ideapad.jpg",
     "description": "A flexible touchscreen laptop with a convertible design."
   },
   {
@@ -176,7 +176,7 @@
     "batteryHours": 7,
     "weightKg": 2.4,
     "screenInches": 16,
-    "image": "https://placehold.co/800x520/e2e8f0/334155?text=Lenovo+Legion+5",
+    "image": "./assets/images/lenovo-legion5.jpg",
     "description": "A high-performance gaming and workstation laptop."
   },
   {
@@ -191,7 +191,7 @@
     "batteryHours": 12,
     "weightKg": 1.32,
     "screenInches": 14,
-    "image": "https://placehold.co/800x520/e2e8f0/334155?text=Acer+Swift+Go+14",
+    "image": "./assets/images/asus-vivobook.jpg",
     "description": "A portable productivity laptop with modern hardware."
   },
   {
@@ -206,7 +206,7 @@
     "batteryHours": 13,
     "weightKg": 1.56,
     "screenInches": 13.5,
-    "image": "https://placehold.co/800x520/e2e8f0/334155?text=Microsoft+Surface+Laptop+5",
+    "image": "./assets/images/dell-inspiron.jpg",
     "description": "A premium laptop with a clean design and excellent keyboard."
   },
   {
@@ -221,7 +221,7 @@
     "batteryHours": 5,
     "weightKg": 2.08,
     "screenInches": 15.6,
-    "image": "https://placehold.co/800x520/e2e8f0/334155?text=Gigabyte+G5",
+    "image": "./assets/images/lenovo-legion5.jpg",
     "description": "An entry-level gaming laptop for students."
   },
   {
@@ -236,7 +236,7 @@
     "batteryHours": 8,
     "weightKg": 1.7,
     "screenInches": 15.6,
-    "image": "https://placehold.co/800x520/e2e8f0/334155?text=ASUS+Vivobook+15",
+    "image": "./assets/images/asus-vivobook.jpg",
     "description": "A budget-friendly laptop for study and everyday browsing."
   },
   {
@@ -251,7 +251,7 @@
     "batteryHours": 15,
     "weightKg": 1.32,
     "screenInches": 14,
-    "image": "https://placehold.co/800x520/e2e8f0/334155?text=Dell+Latitude+7440",
+    "image": "./assets/images/dell-inspiron.jpg",
     "description": "A business-class laptop suitable for academic productivity."
   },
   {
@@ -266,7 +266,7 @@
     "batteryHours": 10,
     "weightKg": 1.55,
     "screenInches": 14,
-    "image": "https://placehold.co/800x520/e2e8f0/334155?text=Lenovo+IdeaPad+Flex+5",
+    "image": "./assets/images/lenovo-ideapad.jpg",
     "description": "A convertible laptop for notes, presentations and entertainment."
   },
   {
@@ -281,7 +281,7 @@
     "batteryHours": 6,
     "weightKg": 2.01,
     "screenInches": 15.6,
-    "image": "https://placehold.co/800x520/e2e8f0/334155?text=Razer+Blade+15",
+    "image": "./assets/images/lenovo-legion5.jpg",
     "description": "A premium gaming laptop with a powerful and compact design."
   },
   {
@@ -296,7 +296,7 @@
     "batteryHours": 7,
     "weightKg": 1.74,
     "screenInches": 15.6,
-    "image": "https://placehold.co/800x520/e2e8f0/334155?text=HP+250+G9",
+    "image": "./assets/images/hp-pavilion.jpg",
     "description": "An entry-level laptop for basic student tasks and browsing."
   }
 ]

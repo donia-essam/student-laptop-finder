@@ -2,6 +2,12 @@ import { isFavorite, toggleFavorite, getTheme, saveTheme, applyTheme } from "./s
 
 export const formatPrice = price => `${Number(price).toLocaleString("en-US")} EGP`;
 
+/*
+ * Laptop cards have the same structure in several parts of the application.
+ * This renderer creates that structure once and allows each page to pass only
+ * the laptop data. It also checks whether the item is saved so the heart
+ * button displays the correct state before a user interaction occurs.
+ */
 export function renderLaptopCard(laptop) {
   const saved = isFavorite(laptop.id);
   return `
@@ -29,23 +35,44 @@ export function renderLaptopCard(laptop) {
 }
 
 export function renderCards(laptops, container) {
+  /*
+   * Rendering is delegated to renderLaptopCard for each item. When no records
+   * pass the caller's filter, a full-width empty state replaces the card grid
+   * rather than leaving the page with an unexplained blank area.
+   */
   container.innerHTML = laptops.length
     ? laptops.map(renderLaptopCard).join("")
     : `<p class="col-span-full rounded-xl border p-10 text-center text-muted">No laptops match your selection.</p>`;
 }
 
 export function showLoading(container, count = 6) {
+  /*
+   * Skeleton cards are temporary visual placeholders. They occupy the same
+   * general amount of space as completed cards, which reduces layout movement
+   * while catalogue data is downloaded and while a page is preparing content.
+   */
   container.innerHTML = Array.from({length: count}, () =>
     `<div class="theme-card rounded-2xl border p-4"><div class="skeleton h-44 w-full"></div><div class="skeleton mt-4 h-5 w-3/4"></div><div class="skeleton mt-3 h-4 w-1/2"></div><div class="skeleton mt-6 h-10 w-full"></div></div>`
   ).join("");
 }
 
 export function showError(container, message) {
+  /*
+   * Errors are rendered into the requested content area with a retry control.
+   * Reloading allows the browser to repeat the fetch and recreate all initial
+   * state instead of attempting a partial recovery that could miss dependencies.
+   */
   container.innerHTML = `<div class="col-span-full rounded-xl border border-red-300 bg-red-50 p-6 text-center text-red-700"><h3 class="font-bold">Something went wrong</h3><p class="mt-2">${message}</p><button id="retryButton" class="btn-action mt-4">Try again</button></div>`;
   container.querySelector("#retryButton")?.addEventListener("click", () => location.reload());
 }
 
 export function setupTheme() {
+  /*
+   * Apply the persisted theme immediately, then update the header control text
+   * so the button describes the mode the user can switch to. The click handler
+   * alternates between Battery Saver and Performance, saves that choice, and
+   * reapplies the data-theme attribute used by the CSS selectors.
+   */
   applyTheme();
   const button = document.querySelector("#themeToggle");
   if (!button) return;
@@ -58,6 +85,11 @@ export function setupTheme() {
 }
 
 export function setupNavigation() {
+  /*
+   * The same navigation markup is used on every page. On small screens, this
+   * handler toggles the menu visibility and synchronises aria-expanded so a
+   * screen reader is told whether the expanded menu is currently available.
+   */
   const button = document.querySelector("#menuToggle");
   const menu = document.querySelector("#mainMenu");
   if (!button || !menu) return;
@@ -68,6 +100,11 @@ export function setupNavigation() {
 }
 
 export function setupFavoriteButtons() {
+  /*
+   * Event delegation places one listener on the document instead of attaching
+   * a listener to every card. It works for cards rendered initially or later
+   * after filtering and detects only buttons marked with the favourite class.
+   */
   document.addEventListener("click", event => {
     const button = event.target.closest(".favorite-btn");
     if (!button) return;

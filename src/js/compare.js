@@ -1,4 +1,10 @@
 export function getBestValues(laptops) {
+  /*
+   * Comparison highlighting depends on the lowest or highest value for each
+   * specification. The extremes are calculated from the complete selected
+   * group rather than from a single laptop, ensuring that only genuinely
+   * favourable values receive the best-value label and green styling.
+   */
   return {
     price: Math.min(...laptops.map(l => l.price)),
     ramGB: Math.max(...laptops.map(l => l.ramGB)),
@@ -8,6 +14,12 @@ export function getBestValues(laptops) {
   };
 }
 export function renderComparison(laptops, container) {
+  /*
+   * The comparison requires at least two records because the header and
+   * specification rows need something meaningful to compare. For a valid
+   * selection, specifications are mapped to formatters that keep the table
+   * presentation consistent without changing the underlying data values.
+   */
   if (laptops.length < 2) {
     container.innerHTML = `<p class="theme-card rounded-xl border p-8 text-center">Select at least two laptops to compare.</p>`;
     return;

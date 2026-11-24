@@ -6,6 +6,7 @@
   <meta name="description" content="Student Laptop Finder - browse, save and compare laptops.">
   <title>Browse Laptops | Student Finder</title>
   <link href="./dist/output.css" rel="stylesheet">
+  <!-- Loads catalogue data and handles search, filtering, sorting, and saved laptop state. -->
   <script type="module" src="./src/js/laptops.js"></script>
 </head>
 <body>
@@ -22,6 +23,7 @@
 
 <main class="page-container">
   <h1 class="section-title">Explore our laptops</h1>
+  <!-- Filter values are read by laptops.js to narrow the displayed catalogue. -->
   <section class="theme-card mb-8 grid gap-4 rounded-2xl border p-5 sm:grid-cols-2 lg:grid-cols-3">
     <input id="searchInput" type="search" placeholder="Search laptop or brand..." class="w-full rounded-xl">
     <select id="categoryFilter" class="w-full rounded-xl"><option value="">All categories</option><option value="ultrabook">Ultrabook</option><option value="gaming">Gaming</option><option value="2-in-1">2-in-1</option><option value="creator">Creator</option><option value="budget">Budget</option></select>
@@ -32,6 +34,7 @@
     <button id="resetFilters" class="btn-action sm:col-span-2 lg:col-span-3">Reset filters</button>
   </section>
   <div class="mb-6 flex items-center justify-between"><h2 class="text-xl font-bold">Laptop results</h2><p id="resultCount" class="font-semibold text-orange-500">Loading...</p></div>
+  <!-- Temporary placeholders are replaced after the laptop records are fetched. -->
   <div id="laptopGrid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"><div class="skeleton h-72"></div><div class="skeleton h-72"></div><div class="skeleton h-72"></div></div>
 </main>
 <footer class="theme-card mt-16 border-t"><div class="page-container text-center text-sm"><p class="font-semibold">Student Laptop Finder</p></div></footer>

@@ -7,6 +7,12 @@ async function initializeHome() {
   showLoading(featured, 3);
   try {
     const laptops = await getLaptops();
+    /*
+     * Collection statistics are calculated from every laptop in the catalogue.
+     * The sorted featured section is deliberately separate and limited to three
+     * items, because it is intended as a promotional preview rather than a
+     * second copy of the complete laptop catalogue.
+     */
     const lowest = laptops.reduce((min, laptop) => Math.min(min, laptop.price), Infinity);
     const average = laptops.reduce((sum, laptop) => sum + laptop.price, 0) / laptops.length;
     document.querySelector("#laptopCount").textContent = laptops.length;

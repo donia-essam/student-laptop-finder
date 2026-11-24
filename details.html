@@ -6,6 +6,7 @@
   <meta name="description" content="Student Laptop Finder - browse, save and compare laptops.">
   <title>Laptop Details | Student Finder</title>
   <link href="./dist/output.css" rel="stylesheet">
+  <!-- Resolves the selected laptop and renders its full specification panel. -->
   <script type="module" src="./src/js/details.js"></script>
 </head>
 <body>
@@ -20,5 +21,9 @@
   </nav>
 </header>
 
-<main class="page-container"><a href="./laptops.html" class="font-semibold text-orange-500">← Back to catalogue</a><div id="detailsContainer" class="mt-8"><div class="skeleton h-96"></div></div></main>
+<main class="page-container">
+  <a href="./laptops.html" class="font-semibold text-orange-500">← Back to catalogue</a>
+  <!-- The laptop ID is read from the URL and used to populate this container. -->
+  <div id="detailsContainer" class="mt-8"><div class="skeleton h-96"></div></div>
+</main>
 <footer class="theme-card mt-16 border-t"><div class="page-container text-center text-sm"><p class="font-semibold">Student Laptop Finder</p></div></footer></body></html>

@@ -6,6 +6,7 @@
   <meta name="description" content="Student Laptop Finder - browse, save and compare laptops.">
   <title>My Favorites | Student Finder</title>
   <link href="./dist/output.css" rel="stylesheet">
+  <!-- Reads saved laptop IDs and keeps the favourites summary and cards in sync. -->
   <script type="module" src="./src/js/favorites.js"></script>
 </head>
 <body>
@@ -22,12 +23,14 @@
 
 <main class="page-container">
   <div class="flex flex-wrap items-center justify-between gap-4"><h1 class="section-title">My favorite laptops ♥</h1><button id="clearFavorites" class="btn-secondary">Clear all</button></div>
+  <!-- These totals reflect the laptops currently stored as favourites. -->
   <section class="mb-8 grid gap-5 sm:grid-cols-3">
     <div class="theme-card rounded-2xl border p-5"><p class="text-muted">Total favorites</p><p id="totalFavorites" class="mt-2 text-3xl font-bold">0</p></div>
     <div class="theme-card rounded-2xl border p-5"><p class="text-muted">Total price</p><p id="totalPrice" class="mt-2 text-2xl font-bold">0 EGP</p></div>
     <div class="theme-card rounded-2xl border p-5"><p class="text-muted">Average price</p><p id="averagePrice" class="mt-2 text-2xl font-bold">0 EGP</p></div>
   </section>
   <div class="mb-6"><a href="./compare.html" class="btn-action">Compare selected favorites →</a></div>
+  <!-- Favourite cards are inserted here, or an empty-state message is shown. -->
   <div id="favoritesGrid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
 </main>
 <footer class="theme-card mt-16 border-t"><div class="page-container text-center text-sm"><p class="font-semibold">Student Laptop Finder</p></div></footer></body></html>

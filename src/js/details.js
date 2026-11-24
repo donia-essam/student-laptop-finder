@@ -6,6 +6,12 @@ const root = document.querySelector("#detailsContainer");
 async function init() {
   try {
     const laptops = await getLaptops();
+    /*
+     * Details pages share one HTML template and receive the selected laptop
+     * through the id query parameter. Reading that parameter allows links from
+     * catalogue cards to open a focused page without creating a separate HTML
+     * file for every laptop in the data set.
+     */
     const id = Number(new URLSearchParams(location.search).get("id"));
     const laptop = laptops.find(l => l.id === id);
     if (!laptop) {
@@ -19,9 +25,19 @@ async function init() {
         ["Laptop ID",laptop.id],["Name",laptop.name],["Brand",laptop.brand],["Price",formatPrice(laptop.price)],["Category",laptop.category],["Processor",laptop.cpu],["RAM",`${laptop.ramGB} GB`],["Storage",`${laptop.storageGB} GB`],["Battery life",`${laptop.batteryHours} hours`],["Weight",`${laptop.weightKg} kg`],["Screen size",`${laptop.screenInches} inches`]
       ].map(([k,v])=>`<tr class="border-b last:border-0"><th class="w-2/5 p-4 font-semibold">${k}</th><td class="p-4">${v}</td></tr>`).join("")}</tbody></table></div></section>`;
     document.querySelector("#favoriteDetail").addEventListener("click", e => {
+      /*
+       * The detail-page control updates storage and immediately changes its own
+       * label. This gives direct feedback while the shared favourites event
+       * allows totals and grids on other modules to refresh as needed.
+       */
       toggleFavorite(id); e.currentTarget.textContent = isFavorite(id) ? "♥ Remove favorite" : "♡ Add favorite";
     });
     document.querySelector("#compareDetail").addEventListener("click", () => {
+      /*
+       * Adding a laptop to comparison is intentionally limited to four records.
+       * Existing selections are preserved, duplicates are avoided, and the user
+       * is redirected only after the updated list has been saved successfully.
+       */
       let selected = getCompareSelection();
       if (!selected.includes(id)) {
         if (selected.length >= 4) { alert("You can select a maximum of four laptops."); return; }
