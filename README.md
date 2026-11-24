@@ -33,13 +33,6 @@ npm install
 npm run build
 ```
 
-## Development
-In one terminal:
-```bash
-npm run dev
-```
-Keep the watcher running. In VS Code, right-click `index.html` and choose **Open with Live Server**. Do not open the HTML files directly with `file://`; `fetch()` requires an HTTP server.
-
 ## Project structure
 ```text
 laptop_finder_student/
@@ -66,14 +59,6 @@ laptop_finder_student/
 ├── package.json
 └── README.md
 ```
-
-## Before submission
-1. Run `npm install` and `npm run build`.
-2. Test the three required user journeys from the assignment.
-3. Test at approximately 375px, 768px, and 1280px widths.
-4. Replace illustrative placeholder images with suitable laptop images if desired.
-5. Review and understand the source code; personalize the project and be ready to explain it during evaluation.
-6. Create your own GitHub repository and add its URL here. Do not claim a repository that you have not created.
 
 ## GitHub repository
 **Add your own repository URL:** `PASTE_YOUR_GITHUB_REPOSITORY_URL_HERE`
