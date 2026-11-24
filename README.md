@@ -61,7 +61,7 @@ laptop_finder_student/
 ```
 
 ## GitHub repository
-**Add your own repository URL:** `PASTE_YOUR_GITHUB_REPOSITORY_URL_HERE`
+**Add your own repository URL:** `https://github.com/donia-essam/student-laptop-finder`
 
 ## Notes
-Laptop prices and specifications in the included JSON are sample data for the assignment demonstration, not live market listings.
+Laptop prices and specifications in the included JSON are sample data for the assignment demonstration purposes, not live market listings.
