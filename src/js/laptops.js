@@ -7,12 +7,6 @@ const controls = ["searchInput","categoryFilter","maxPrice","minRam","minBattery
 let all = [];
 function filterLaptops() {
   const [searchEl, categoryEl, priceEl, ramEl, batteryEl, sortEl] = controls;
-  /*
-   * Text and category filters are combined with the numeric limits below.
-   * An empty numeric field is converted to a neutral value: Infinity permits
-   * every price, while zero permits every RAM and battery requirement.
-   * All conditions must match for a laptop to remain in the result set.
-   */
   const q = searchEl.value.trim().toLowerCase();
   const category = categoryEl.value;
   const max = priceEl.value === "" ? Infinity : Number(priceEl.value);
@@ -31,11 +25,6 @@ function filterLaptops() {
 }
 async function init() {
   showLoading(grid);
-  /*
-   * The catalogue is downloaded once and stored in memory. Every later filter,
-   * sort, or reset operation processes that local array instead of making a
-   * repeated network request, keeping interactions immediate and predictable.
-   */
   try { all = await getLaptops(); filterLaptops(); }
   catch { count.textContent = "Unavailable"; showError(grid, "Laptop data could not be loaded."); }
 }
